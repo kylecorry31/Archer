@@ -87,14 +87,19 @@ public class Arrow : Agent
             if (shotStrength < 100)
             {
                 shotStrength++;
-                AddReward(1 / 100.0f);
+                AddReward(1 / 1000.0f);
+                Debug.Log("Strength: " + shotStrength + "%");
+            } else
+            {
+                AddReward(-1 / 1000.0f);
             }
             drawn = true;
         }
 
         // When the button is released, fire the arrow at the given strength
-        if (!shot && drawn && vectorAction[1] == 0)
+        if (!shot && vectorAction[1] == 2)
         {
+            AddReward(shotStrength / 10.0f);
             rigidbody2D.gravityScale = 1;
             float force = shotStrength / 100.0f * maxShotForce;
             float forceX = force * Mathf.Cos(shootingAngle * Mathf.Deg2Rad);

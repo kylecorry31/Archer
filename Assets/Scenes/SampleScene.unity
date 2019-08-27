@@ -176,26 +176,6 @@ MonoBehaviour:
     targetFrameRate: 60
   resetParameters:
     resetParameters: []
---- !u!1 &519263015 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 566066307703315541, guid: 7be9b5359cd194741aee8e0204bce809,
-    type: 3}
-  m_PrefabInstance: {fileID: 6061634855970150813}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &519263016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519263015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f710d360a49461cad67ff5e6bcefe1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  record: 0
-  demonstrationName: archer
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   brainParameters:
     vectorObservationSize: 3
     numStackedVectorObservations: 16
-    vectorActionSize: 0300000002000000
+    vectorActionSize: 0300000003000000
     cameraResolutions: []
     vectorActionDescriptions:
     - Angle
@@ -33,3 +33,6 @@ MonoBehaviour:
   - key: 323
     branchIndex: 1
     value: 1
+  - key: 324
+    branchIndex: 1
+    value: 2
