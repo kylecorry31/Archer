@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4733471804341499000}
   - component: {fileID: 8527436807551503489}
   - component: {fileID: 10357131101862298}
-  - component: {fileID: 3394890501544024032}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -99,7 +98,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.41, y: 0.32}
+    oldSize: {x: 4.38, y: 0.32}
     newSize: {x: 4.41, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -129,19 +128,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3394890501544024032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6036040142631030872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2b02c2c7065e82488f456a932e372cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minShotForce: 0
-  maxShotForce: 2000
-  shot: 0
-  shotStrength: 0

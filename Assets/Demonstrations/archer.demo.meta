@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 6fcaee89b3cd2054089e48a7399e5ed9
+ScriptedImporter:
+  fileIDToRecycleName:
+    11400000: Assets/Demonstrations/archer.demo
+  externalObjects: {}
+  userData: ' (MLAgents.Demonstration)'
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 7bd65ce151aaa4a41a45312543c56be1, type: 3}
