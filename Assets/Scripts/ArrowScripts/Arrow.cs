@@ -53,14 +53,14 @@ public class Arrow : Agent
     {
         if (transform.position.y < 0)
         {
-            SetReward(-2.0f);
+            SetReward(-0.1f);
             Done();
             return;
         }
 
         if (Time.fixedTime - startTime > 10.0f)
         {
-            SetReward(-2.0f);
+            SetReward(-0.1f);
             Done();
             return;
         }
@@ -141,11 +141,11 @@ public class Arrow : Agent
     {
         if (collision.gameObject == target)
         {
-            SetReward(2.0f);
+            SetReward(1.0f);
             Done();
         } else
         {
-            SetReward(-2.0f);
+            SetReward(-0.1f);
             Done();
         }
     }

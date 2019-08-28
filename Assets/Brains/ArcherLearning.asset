@@ -21,5 +21,5 @@ MonoBehaviour:
     - Angle
     - Draw
     vectorActionSpaceType: 0
-  model: {fileID: 0}
+  model: {fileID: 11400000, guid: 2aaa9b981fb5955499cc4581c4f6ca0e, type: 3}
   inferenceDevice: 0

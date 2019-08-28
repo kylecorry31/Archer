@@ -117,11 +117,11 @@ ArcherLearning:
     num_epoch: 10
     pretraining:
         demo_path: ./Assets/Demonstrations/archer.demo
-        strength: 0.9
-        steps: 100000
+        strength: 0.6
+        steps: 10000
     reward_signals:
         extrinsic:
-            strength: 1.0
+            strength: 0.9
             gamma: 0.99
         gail:
             strength: 0.1
