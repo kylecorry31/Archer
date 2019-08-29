@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using MLAgents;
+using UnityEngine.UI;
 
 public class Arrow : Agent
 {
 
     public GameObject area;
     private ArcherArea myArea;
+
+    public Text text;
 
     public float minShotForce = 0.0f;
     public float maxShotForce = 1000.0f;
@@ -21,8 +24,6 @@ public class Arrow : Agent
     public float minShootingAngle = -90;
 
     private float startTime;
-
-
 
     public GameObject target;
 
@@ -47,20 +48,24 @@ public class Arrow : Agent
         AddVectorObs(myArea.GetTargetDistance() / 100.0f);
         AddVectorObs(shootingAngle / 90.0f);
         AddVectorObs(shotStrength / 100.0f);
+        AddVectorObs(shot);
+        AddVectorObs(shotStrength == 100);
+        AddVectorObs(drawn);
+        text.text = string.Format("Strength: {0}%\nAngle: {1}\nReward: {2:0.000}", shotStrength, shootingAngle, GetCumulativeReward());
     }
 
     public override void AgentAction(float[] vectorAction, string textAction)
     {
         if (transform.position.y < 0)
         {
-            SetReward(-0.1f);
+            AddReward(-0.1f);
             Done();
             return;
         }
 
         if (Time.fixedTime - startTime > 10.0f)
         {
-            SetReward(-0.1f);
+            AddReward(-0.1f);
             Done();
             return;
         }
@@ -71,10 +76,10 @@ public class Arrow : Agent
             AddReward(-1 / 1000.0f);
         }
 
-        if (vectorAction[0] == 1 && shootingAngle < maxShootingAngle)
+        if (vectorAction[0] == 1 && shootingAngle < maxShootingAngle && !shot)
         {
             shootingAngle += shootingAngleIncrement;
-        } else if (vectorAction[0] == 2 && shootingAngle > minShootingAngle)
+        } else if (vectorAction[0] == 2 && shootingAngle > minShootingAngle && !shot)
         {
             shootingAngle -= shootingAngleIncrement;
         }        
@@ -82,13 +87,12 @@ public class Arrow : Agent
         float velocity = Mathf.Abs(rigidbody2D.velocity.x);
 
         // Build up strength while the mouse button is held
-        if (vectorAction[1] == 1)
+        if (vectorAction[1] == 1 && !shot)
         {
             if (shotStrength < 100)
             {
                 shotStrength++;
                 AddReward(1 / 1000.0f);
-                Debug.Log("Strength: " + shotStrength + "%");
             } else
             {
                 AddReward(-1 / 1000.0f);
@@ -99,7 +103,7 @@ public class Arrow : Agent
         // When the button is released, fire the arrow at the given strength
         if (!shot && vectorAction[1] == 2)
         {
-            AddReward(shotStrength / 10.0f);
+            AddReward(shotStrength / 400.0f);
             rigidbody2D.gravityScale = 1;
             float force = shotStrength / 100.0f * maxShotForce;
             float forceX = force * Mathf.Cos(shootingAngle * Mathf.Deg2Rad);
@@ -141,11 +145,11 @@ public class Arrow : Agent
     {
         if (collision.gameObject == target)
         {
-            SetReward(1.0f);
+            AddReward(1.0f);
             Done();
         } else
         {
-            SetReward(-0.1f);
+            AddReward(-0.1f);
             Done();
         }
     }

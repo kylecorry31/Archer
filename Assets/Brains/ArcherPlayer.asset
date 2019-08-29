@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ArcherPlayer
   m_EditorClassIdentifier: 
   brainParameters:
-    vectorObservationSize: 3
-    numStackedVectorObservations: 16
+    vectorObservationSize: 6
+    numStackedVectorObservations: 32
     vectorActionSize: 0300000003000000
     cameraResolutions: []
     vectorActionDescriptions:

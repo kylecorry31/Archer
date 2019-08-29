@@ -159,7 +159,8 @@ MonoBehaviour:
     broadcastingBrains:
     - {fileID: 11400000, guid: 50c467e184cfc7b4ca08535f81ad5dd7, type: 2}
     - {fileID: 11400000, guid: 4eb67f1dfae4dfe418bae1202719dd63, type: 2}
-    _brainsToControl: []
+    _brainsToControl:
+    - {fileID: 11400000, guid: 4eb67f1dfae4dfe418bae1202719dd63, type: 2}
   maxSteps: 0
   trainingConfiguration:
     width: 80
@@ -446,6 +447,16 @@ PrefabInstance:
         type: 3}
       propertyPath: maxShotForce
       value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558497710316091179, guid: 7be9b5359cd194741aee8e0204bce809,
+        type: 3}
+      propertyPath: record
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558497710316091179, guid: 7be9b5359cd194741aee8e0204bce809,
+        type: 3}
+      propertyPath: demonstrationName
+      value: archer2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7be9b5359cd194741aee8e0204bce809, type: 3}
